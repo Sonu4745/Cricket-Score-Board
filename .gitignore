@@ -1,1 +1,82 @@
-node_modules
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Angular cache
+/.angular/cache
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+.history/
+
+# misc
+.DS_Store
+Thumbs.db
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Firebase
+.firebase/
+
+# Vercel
+.vercel
+
+# Netlify
+.netlify
+
+# Angular generated files
+.angular
+.sass-cache/
+connect.lock
+libpeerconnection.log
+
+# TypeScript
+*.tsbuildinfo
+
+# optional npm cache
+.npm
+
+# optional eslint cache
+.eslintcache
+
+# Mac files
+.AppleDouble
+.LSOverride
+
+# Windows files
+ehthumbs.db
+Desktop.ini
