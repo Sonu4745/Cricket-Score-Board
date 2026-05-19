@@ -1,0 +1,64 @@
+{
+  "hash": "5dcb7abf",
+  "configHash": "78bd20f5",
+  "lockfileHash": "080c4ca9",
+  "browserHash": "1ad844ff",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "f5b03ee4",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "af61ecab",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "4d182d55",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "706bd486",
+      "needsInterop": false
+    },
+    "@angular/platform-browser/animations": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/animations.mjs",
+      "file": "@angular_platform-browser_animations.js",
+      "fileHash": "824cec3a",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "28fec82e",
+      "needsInterop": false
+    },
+    "@taiga-ui/event-plugins": {
+      "src": "../../../../../../node_modules/@taiga-ui/event-plugins/fesm2022/taiga-ui-event-plugins.mjs",
+      "file": "@taiga-ui_event-plugins.js",
+      "fileHash": "ed9ad7fa",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-QOB2EDIB": {
+      "file": "chunk-QOB2EDIB.js"
+    },
+    "chunk-6LWRNXGK": {
+      "file": "chunk-6LWRNXGK.js"
+    },
+    "chunk-T65LYMK5": {
+      "file": "chunk-T65LYMK5.js"
+    },
+    "chunk-KUA6TBKJ": {
+      "file": "chunk-KUA6TBKJ.js"
+    }
+  }
+}

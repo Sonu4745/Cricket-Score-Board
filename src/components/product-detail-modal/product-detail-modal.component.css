@@ -1,0 +1,436 @@
+/* Flipkart-Style Modal CSS */
+
+/* Modal Backdrop Styling */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1040;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Modal Styling */
+  .product-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+    overflow-y: auto;
+  }
+  
+  .flipkart-style .modal-content {
+    background-color: #fff;
+    width: 100%;
+    max-width: 1020px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalFadeIn 0.3s ease-out;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Modal Header */
+  .flipkart-style .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #f7f7f7;
+  }
+  
+  .flipkart-style .breadcrumb-nav {
+    font-size: 14px;
+    color: #878787;
+  }
+  
+  .flipkart-style .breadcrumb-nav span {
+    margin: 0 5px;
+  }
+  
+  .flipkart-style .breadcrumb-nav span:first-child {
+    margin-left: 0;
+  }
+  
+  /* Modal Body */
+  .flipkart-style .modal-body {
+    padding: 20px 25px;
+  }
+  
+  /* Product Image Gallery */
+  .flipkart-style .product-image-gallery {
+    position: relative;
+    border-right: 1px solid #f0f0f0;
+    padding-right: 20px;
+  }
+  
+  .flipkart-style .wishlist-btn {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    width: 36px;
+    height: 36px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .flipkart-style .wishlist-btn i {
+    font-size: 20px;
+    color: #c2c2c2;
+  }
+  
+  .flipkart-style .main-image {
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 15px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .flipkart-style .main-image img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  
+  /* Action Buttons */
+  .flipkart-style .action-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .flipkart-style .btn-add-to-cart {
+    flex: 1;
+    background-color: #ff9f00;
+    color: #fff;
+    border: none;
+    padding: 16px 0;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+  
+  .flipkart-style .btn-buy-now {
+    flex: 1;
+    background-color: #fb641b;
+    color: #fff;
+    border: none;
+    padding: 16px 0;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+  
+  /* Product Details */
+  .flipkart-style .product-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #212121;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  
+  /* Rating Section */
+  .flipkart-style .rating-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  
+  .flipkart-style .rating-badge {
+    background-color: #388e3c;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .flipkart-style .rating-count {
+    margin-left: 8px;
+    color: #878787;
+    font-size: 14px;
+    padding-left: 8px;
+    border-left: 1px solid #eaeaea;
+  }
+  
+  .flipkart-style .assured-badge {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+  
+  .flipkart-style .assured-badge i {
+    color: #2874f0;
+    font-size: 20px;
+    margin-right: 5px;
+  }
+  
+  /* Price Section */
+  .flipkart-style .price-section {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .flipkart-style .special-price {
+    color: #388e3c;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .flipkart-style .price-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .flipkart-style .current-price {
+    font-size: 28px;
+    font-weight: 500;
+    color: #212121;
+    margin: 0;
+  }
+  
+  .flipkart-style .original-price {
+    font-size: 16px;
+    color: #878787;
+    text-decoration: line-through;
+  }
+  
+  .flipkart-style .discount-percent {
+    font-size: 16px;
+    color: #388e3c;
+    font-weight: 500;
+  }
+  
+  .flipkart-style .info-icon {
+    color: #878787;
+    cursor: pointer;
+  }
+  
+  .flipkart-style .emi-info {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
+  .flipkart-style .emi-details {
+    color: #212121;
+    margin-left: 10px;
+  }
+  
+  .flipkart-style .details-link {
+    color: #2874f0;
+    margin-left: 10px;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  /* Available Offers */
+  .flipkart-style .available-offers {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .flipkart-style .available-offers h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #212121;
+    margin-bottom: 12px;
+  }
+  
+  .flipkart-style .offer-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  .flipkart-style .offer-item i {
+    color: #14be47;
+    margin-right: 10px;
+    margin-top: 3px;
+  }
+  
+  .flipkart-style .offer-title {
+    font-weight: 500;
+    margin-right: 5px;
+  }
+  
+  .flipkart-style .t-and-c, .flipkart-style .view-plans {
+    color: #2874f0;
+    margin-left: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  /* Exchange Options */
+  .flipkart-style .exchange-options {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .flipkart-style .exchange-option {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .flipkart-style .exchange-option:last-child {
+    border-bottom: none;
+  }
+  
+  .flipkart-style .option-radio {
+    margin-right: 15px;
+    position: relative;
+  }
+  
+  .flipkart-style .option-radio input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #c2c2c2;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .flipkart-style .option-radio input:checked {
+    border-color: #2874f0;
+  }
+  
+  .flipkart-style .option-radio input:checked::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #2874f0;
+    border-radius: 50%;
+  }
+  
+  .flipkart-style .option-details {
+    flex: 1;
+  }
+  
+  .flipkart-style .option-title {
+    font-weight: 500;
+    color: #212121;
+  }
+  
+  .flipkart-style .exchange-details {
+    font-size: 14px;
+    color: #878787;
+    margin-top: 3px;
+  }
+  
+  .flipkart-style .option-price {
+    font-weight: 500;
+    color: #212121;
+  }
+  
+  .flipkart-style .pincode-check {
+    margin-top: 10px;
+  }
+  
+  .flipkart-style .pincode-check a {
+    color: #2874f0;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  /* Warranty Info */
+  .flipkart-style .warranty-info {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+  }
+  
+  .flipkart-style .warranty-logo {
+    height: 36px;
+    margin-right: 15px;
+  }
+  
+  .flipkart-style .warranty-text {
+    flex: 1;
+    font-size: 14px;
+    color: #212121;
+  }
+  
+  .flipkart-style .know-more {
+    color: #2874f0;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 767px) {
+    .flipkart-style .modal-content {
+      max-width: 100%;
+      height: 100%;
+      max-height: 100%;
+    }
+    
+    .flipkart-style .product-image-gallery {
+      position: relative;
+      top: 0;
+      margin-bottom: 20px;
+      border-right: none;
+      padding-right: 0;
+      border-bottom: 1px solid #f0f0f0;
+      padding-bottom: 20px;
+    }
+    
+    .flipkart-style .action-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .flipkart-style .row {
+      flex-direction: column;
+    }
+  }

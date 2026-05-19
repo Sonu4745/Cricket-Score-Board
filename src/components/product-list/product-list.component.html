@@ -1,0 +1,83 @@
+<div class="container-fluid py-3">
+    <!-- Loop through each product category -->
+    <div *ngFor="let category of productCategories; let i = index" class="mb-5">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="category-title mb-0">{{ category.title }}</h2>
+        <div class="slider-controls d-none d-md-flex">
+          <button class="carousel-nav-btn me-2" type="button" [attr.data-bs-target]="'#productCarousel' + i" data-bs-slide="prev">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+          <button class="carousel-nav-btn" type="button" [attr.data-bs-target]="'#productCarousel' + i" data-bs-slide="next">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+  
+      <div class="position-relative product-carousel-container">
+        <!-- Carousel/Slider for each category -->
+        <div [id]="'productCarousel' + i" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <!-- First group of products (visible on first slide) -->
+            <div class="carousel-item active">
+              <div class="row g-3">
+                <div *ngFor="let product of category.products | slice:0:5" class="col-6 col-md-4 col-lg-20percent">
+                  <div class="product-card text-center" (click)="openProductModal(product)">
+                    <div class="product-image-container mb-2">
+                      <!-- Add loading="lazy" for better performance -->
+                      <img [src]="product.imageUrl" [alt]="product.name" class="img-fluid product-image" 
+                           (error)="handleImageError($event)" loading="lazy">
+                    </div>
+                    <h5 class="product-name">{{ product.name }}</h5>
+                    <p class="product-price mb-0">{{ product.price }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Second group of products (if available) -->
+            <div *ngIf="category.products.length > 5" class="carousel-item">
+              <div class="row g-3">
+                <div *ngFor="let product of category.products | slice:5:10" class="col-6 col-md-4 col-lg-20percent">
+                  <div class="product-card text-center" (click)="openProductModal(product)">
+                    <div class="product-image-container mb-2">
+                      <img [src]="product.imageUrl" [alt]="product.name" class="img-fluid product-image" 
+                           (error)="handleImageError($event)" loading="lazy">
+                    </div>
+                    <h5 class="product-name">{{ product.name }}</h5>
+                    <p class="product-price mb-0">{{ product.price }}</p>
+                  </div>
+                </div>
+                
+                <!-- Add empty columns to fill the row if needed -->
+                <ng-container *ngIf="(category.products.length > 5) && (category.products.length < 10)">
+                  <div *ngFor="let empty of [].constructor(10 - category.products.length)" class="col-6 col-md-4 col-lg-20percent">
+                    <!-- Empty slot -->
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Carousel Controls (visible on mobile only) -->
+          <button class="carousel-control-prev d-md-none" type="button" [attr.data-bs-target]="'#productCarousel' + i" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next d-md-none" type="button" [attr.data-bs-target]="'#productCarousel' + i" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+    <app-product-detail-modal 
+      [product]="selectedProduct" 
+      [showModal]="showProductModal"
+      (closeModal)="closeProductModal()">
+    </app-product-detail-modal>
+
+  </div>

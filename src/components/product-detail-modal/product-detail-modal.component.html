@@ -1,0 +1,148 @@
+<!-- Modal Backdrop -->
+<div class="modal-backdrop" *ngIf="showModal" (click)="close()"></div>
+
+<!-- Product Detail Modal - Flipkart Style -->
+<div class="product-modal flipkart-style" *ngIf="showModal && product">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <!-- Modal Header with Close Button -->
+    <div class="modal-header">
+      <div class="breadcrumb-nav">
+        <span>Home</span> > 
+        <span>{{ product.category }}</span> > 
+        <span>{{ product.name }}</span>
+      </div>
+      <button type="button" class="btn-close" (click)="close()"></button>
+    </div>
+
+    <!-- Modal Body -->
+    <div class="modal-body">
+      <div class="row">
+        <!-- Product Image Column -->
+        <div class="col-md-5">
+          <div class="product-image-gallery">
+            <div class="wishlist-btn">
+              <i class="bi bi-heart"></i>
+            </div>
+            <div class="main-image">
+              <img [src]="product.imageUrl" [alt]="product.name" class="img-fluid" 
+                   (error)="handleImageError($event)">
+            </div>
+            <div class="action-buttons mt-3">
+              <button class="btn btn-add-to-cart" (click)="addToCart()">
+                <i class="bi bi-cart me-2"></i> ADD TO CART
+              </button>
+              <button class="btn btn-buy-now" (click)="buyNow()">
+                <i class="bi bi-lightning-fill me-2"></i> BUY NOW
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Details Column -->
+        <div class="col-md-7">
+          <div class="product-details">
+            <!-- Product Name -->
+            <h1 class="product-title">{{ product.name }}</h1>
+            
+            <!-- Rating Section -->
+            <div class="rating-section">
+              <div class="rating-badge" *ngIf="product.rating">
+                {{ product.rating }} ★
+              </div>
+              <span class="rating-count" *ngIf="product.reviews">
+                {{ product.reviews }} Ratings & Reviews
+              </span>
+              <span class="assured-badge" *ngIf="product.available">
+                <i class="bi bi-patch-check-fill"></i> Assured
+              </span>
+            </div>
+
+            <!-- Price Section -->
+            <div class="price-section">
+              <div *ngIf="product.discount" class="special-price">
+                Extra ₹{{ product.discount }} off
+              </div>
+              <div class="price-row">
+                <h2 class="current-price">{{ product.prices }}</h2>
+                <!-- <span class="original-price" *ngIf="product.discount">₹{{ getOriginalPrice(product.price, product.discount) }}</span>
+                <span class="discount-percent" *ngIf="product.discount">{{ getDiscountPercent(product.price, product.discount) }}% off</span> -->
+                <span class="info-icon"><i class="bi bi-info-circle"></i></span>
+              </div>
+              
+              <!-- EMI Info -->
+              <div class="emi-info" *ngIf="product.price !== 'From ₹139' && product.price !== 'From ₹ 159' && product.price !== 'From ₹ 79' && product.price !== 'From ₹49'">
+                <span>{{ product.prices }}</span>
+                <span class="emi-details">No Cost EMI Plan with American Express</span>
+                <a href="javascript:void(0)" class="details-link">Details</a>
+              </div>
+            </div>
+
+            <!-- Available Offers -->
+            <div class="available-offers">
+              <h3>Available offers</h3>
+              <div class="offer-item">
+                <i class="bi bi-tag-fill"></i>
+                <span class="offer-title">Bank Offer</span>
+                <span class="offer-details">5% Unlimited Cashback on Flipkart Axis Bank Credit Card</span>
+                <a href="javascript:void(0)" class="t-and-c">T&C</a>
+              </div>
+              <div class="offer-item">
+                <i class="bi bi-tag-fill"></i>
+                <span class="offer-title">Special Price</span>
+                <span class="offer-details">Get extra ₹{{ product.discount || product.prices }} off (price inclusive of cashback/coupon)</span>
+                <a href="javascript:void(0)" class="t-and-c">T&C</a>
+              </div>
+              <div class="offer-item">
+                <i class="bi bi-calendar-check"></i>
+                <span class="offer-title">No cost EMI ₹23/month</span>
+                <span class="offer-details">Standard EMI also available</span>
+                <a href="javascript:void(0)" class="view-plans">View Plans</a>
+              </div>
+            </div>
+
+            <!-- Exchange Options -->
+            <div class="exchange-options">
+              <div class="exchange-option selected">
+                <div class="option-radio">
+                  <input type="radio" id="noExchange" name="exchange" checked>
+                  <label for="noExchange"></label>
+                </div>
+                <div class="option-details">
+                  <span class="option-title">Buy without Exchange</span>
+                </div>
+                <div class="option-price">
+                  ₹343
+                </div>
+              </div>
+              <div class="exchange-option">
+                <div class="option-radio">
+                  <input type="radio" id="withExchange" name="exchange">
+                  <label for="withExchange"></label>
+                </div>
+                <div class="option-details">
+                  <span class="option-title">Buy with Exchange</span>
+                  <div class="exchange-details">
+                    <span>Get extra ₹500 off on exchange of select models</span>
+                  </div>
+                </div>
+                <div class="option-price">
+                  up to ₹7,150 off
+                </div>
+              </div>
+              <div class="pincode-check">
+                <a href="javascript:void(0)">Enter pincode to check if exchange is available</a>
+              </div>
+            </div>
+
+            <!-- Warranty Info -->
+            <div class="warranty-info">
+              <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/samsung_3856a0.png" alt="Samsung" class="warranty-logo">
+              <span class="warranty-text">1 Year Manufacturer Warranty for Device and 6 Months for In-Box Accessories</span>
+              <a href="javascript:void(0)" class="know-more">Know More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
